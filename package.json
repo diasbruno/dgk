@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Bruno Dias",
   "scripts": {
+    "dev": "node tools/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
