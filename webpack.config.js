@@ -29,24 +29,26 @@ module.exports = {
     "./src/app.js"
   ],
 
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
-
   output: {
     path: publicPath,
     publicPath: '',
     filename: "index.js"
   },
 
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+    root: path.resolve(path.join(__dirname, 'src')),
+    alias: {
+      'libdgk': path.resolve(__dirname, 'lib'),
+      'dgk': path.resolve(__dirname, 'src')
+    }
+  },
+
   plugins: plugins,
 
   module: {
     loaders: [
-      { test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel'
-      }
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' }
     ]
   }
 };
